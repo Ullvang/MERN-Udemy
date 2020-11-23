@@ -1,0 +1,29 @@
+{
+  "name": "mern-udemy",
+  "version": "1.0.0",
+  "description": "Udemy course",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ullvang/MERN-Udemy.git"
+  },
+  "keywords": [
+    "node",
+    "api"
+  ],
+  "author": "Jon Erik Ullvang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ullvang/MERN-Udemy/issues"
+  },
+  "homepage": "https://github.com/Ullvang/MERN-Udemy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
