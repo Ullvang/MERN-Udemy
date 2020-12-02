@@ -30,21 +30,19 @@ userSchema
   .set(function (password) {
     this._password = password;
     this.salt = uuidv1();
-    this.hashed_password = this.encryptPassword(password, salt);
+    this.hashed_password = this.encryptPassword(password, this.salt);
   })
   .get(() => {
     return this._password;
   });
 
 userSchema.methods = {
-  encryptPassword: (password) => {
+  encryptPassword: (password, salt) => {
     if (!password) return "";
     try {
-      return crypto
-        .createHmac("sha1", this.salt)
-        .update(password)
-        .digest("hex");
+      return crypto.createHmac("sha1", salt).update(password).digest("hex");
     } catch (err) {
+      console.log(err);
       return "";
     }
   },
